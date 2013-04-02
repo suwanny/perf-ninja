@@ -35,3 +35,8 @@ hdoc 'run_node', 'run the nodejs web server'
 task :run_node do
   sh "node server/nodejs/http.js"
 end
+
+hdoc 'run_http_request', "send http requests with nodejs's http.request"
+task :run_http_request do
+  sh "node node_clients/http_request.js"
+end
