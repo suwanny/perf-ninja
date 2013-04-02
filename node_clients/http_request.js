@@ -1,11 +1,7 @@
 
 var http    = require('http');
-var winston = require('winston');
-var logger  = new (winston.Logger)({
-  transports: [
-    new (winston.transports.Console)({'timestamp':true})
-  ]
-});
+var helper  = require('./helper')
+var logger  = helper.logger;
 
 var options = {
   hostname: '127.0.0.1',
@@ -21,7 +17,6 @@ var request_callback = function(res) {
     // logger.debug('BODY: ' + chunk);
   });
 }
-
 
 logger.info("before making requests");
 
